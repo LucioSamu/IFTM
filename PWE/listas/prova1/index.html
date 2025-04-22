@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="keyword" content="sistemas, computação, IFTM, internet, curso,">
+  <meta name="description" content="Página Web com informações sobre os cursos oferecidos pelo IFTM.">
+  <meta name="author" content="Samuel Alves">
+  <title>IFTM Cursos</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #f5f5f5;
+      padding: 20px;
+      display: flex;
+      align-items: center;
+    }
+
+    header img {
+      height: 60px;
+    }
+
+    main {
+      padding: 20px;
+    }
+
+    h2 {
+      color: green;
+    }
+
+    .vermelho {
+      color: darkred;
+      font-weight: bold;
+    }
+
+    .curso {
+      display: flex;
+      gap: 20px;
+    }
+
+        .descricao {
+      margin-top: 20px;
+    }
+
+    .descricao h3 {
+      color: darkred;
+    }
+
+    a {
+      text-decoration: none;
+      color: blue;
+    }
+
+    hr {
+      margin-top: 10px;
+    }
+
+    .mais-info {
+      display: none;
+      margin-top: 10px;
+    }
+
+    .expandir-btn {
+      margin-top: 10px;
+      cursor: pointer;
+      background-color: transparent;
+      border: none;
+      color: blue;
+      font-size: 16px;
+      padding: 0;
+    }
+
+    .expandir-btn:hover {
+      text-decoration: underline;
+    }
+
+    .tabela-info {
+      margin-top: 15px;
+      border-collapse: collapse;
+    }
+
+    .tabela-info th, .tabela-info td {
+      border: 1px solid #ccc;
+      padding: 8px;
+      text-align: center;
+    }
+
+    .tabela-info th {
+      background-color: #eee;
+      font-weight: bold;
+    }
+
+    .negrito {
+      font-weight: bold;
+    }
+  </style>
+  <script>
+    function toggleInfo(id, btn) {
+      const section = document.getElementById(id);
+      const symbol = btn.querySelector(".symbol");
+
+      if (section.style.display === "none" || section.style.display === "") {
+        section.style.display = "block";
+        symbol.textContent = "▼";
+      } else {
+        section.style.display = "none";
+        symbol.textContent = "►";
+      }
+    }
+  </script>
+</head>
+<body>
+
+  <header>
+    <img src="img/logoIFTM.png" alt="Logo do IFTM" />
+  </header>
+
+  <main>
+    <h2>Cursos oferecidos</h2>
+    <p class="vermelho">Conheça os cursos oferecidos pelo IFTM</p>
+    <p>
+      O <a href="https://iftm.edu.br" target="_blank">IFTM</a> campus Uberlândia Centro oferece cursos de graduação em Licenciatura e em Tecnologia. Confira abaixo alguns desses cursos:
+    </p>
+
+    <div class="curso">
+      <div style="text-align: center;">
+        <a ><img src="img/licenciatura.jpg" alt="Licenciatura em Computação" /></a><br />
+        <a href="#licenciatura">Licenciatura em Computação</a>
+      </div>
+      <div style="text-align: center;">
+        <a ><img src="img/sistemas.jpg" alt="Sistemas para Internet" /></a><br />
+        <a href="#sistemas">Sistemas para Internet</a>
+      </div>
+    </div>
+
+    <div class="description" id="licenciatura">
+      <h3 href="#licenciatura">Licenciatura em Computação</h3>
+      <hr />
+      <p>
+        No exercício profissional do licenciado em computação estão implícitas: a colaboração com profissionais de diversas áreas, a qualificação e o comprometimento com a gestão do processo de ensino-aprendizagem, a visão da complementaridade do processo educativo, da tecnologia e da ciência da computação, o estímulo à pesquisa, à criação, e ao investimento na própria formação. Tem como objetivo formar professores com uma visão tecnológica em computação, para atuarem na educação básica: ensino fundamental, ensino médio, e ainda na educação profissional técnica de nível médio, na rede de ensino pública e privada.
+      </p>
+      <button class="expandir-btn" onclick="toggleInfo('infoLic', this)">
+        <span class="symbol">►</span> Mais informações sobre o curso
+      </button>
+      <div id="infoLic" class="mais-info">
+        <p><b>Perfil do egresso</b></p>
+        <p>Entendemos o licenciado em computação, em primeiro lugar, como um profissional ligado ao exercício do diálogo entre as unidades curriculares nos espaços da educação. Como tal, esse profissional agrega-se às equipes de coordenação pedagógica, nas quais atua de início, como um facilitador da introdução de novas tecnologias, não apenas no sentido prático (ou das práticas), mas particularmente no nível da discussão de metodologias e concepções. Nessa qualidade, a sua intervenção no plano das atividades de concepção, planejamento e gestão pedagógicas pode, ou não, ser definida como algo transitório, dependendo da maior ou menor dificuldade de amadurecimento da cultura tecnológica na comunidade em que atua.</p>
+        <p><b>Corpo docente</b></p>
+        <p>Conheça os professores do curso de Licenciatura em Computação:</p>
+        <table class="tabela-info">
+          <tr><td>Docente</td><td>Titulação</td><td>Area de atuação</td><td>Regime</td></tr>
+          <tr><td>Bruno Queiroz Pinto</td><td>Doutorado</td><td>Desenvolvimento de Sistemas</td><td>DE</td></tr>
+          <tr><td>Wilton de Paula Filho</td><td>Doutorado</td><td>Computação 2</td><td>DE</td></tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="description" id="sistemas">
+      <h3 href="#sistemas">Sistemas para Internet</h3>
+      <hr/>
+      <p>
+        O curso de Tecnologia em Sistemas para Internet possui como objetivo geral formar tecnólogos em Sistemas para Internet propiciando conhecimentos teóricos e práticos com vistas à formação integral, por meio do estudo técnico-científico e da reflexão crítica acerca dos aspectos humanos, éticos e cidadãos, de modo a atender com excelência às demandas do arranjo produtivo da região.
+      </p>
+      <button class="expandir-btn" onclick="toggleInfo('infoSis', this)">
+        <span class="symbol">►</span> Mais informações sobre o curso
+      </button>
+      <div id="infoSis" class="mais-info">
+        <p><b>Perfil do egresso</b></p>
+        <p>O curso de Tecnologia em Sistemas para Internet, por meio de seus componentes curriculares e demais atividades acadêmicas, proporcionará ao egresso uma formação com embasamento técnico nas diversas áreas relacionadas aos sistemas para Internet/Intranet/Web, ao mesmo tempo em que visa à formação integral, oportunizando ensino-aprendizado de aspectos científicos, bem como humanos, éticos e cidadãos.
+        </p>
+        <p><b>Corpo docente</b></p>
+        <p>Conheça os professores do curso de Sistemas para Internet:</p>
+        <table class="tabela-info">
+            <tr><td>Docente</td><td>Titulação</td><td>Area de atuação</td><td>Regime</td></tr>
+          <tr><td>Bruno Queiroz Pinto</td><td>Doutorado</td><td>Desenvolvimento de Sistemas</td><td>DE</td></tr>
+          <tr><td>Wilton de Paula Filho</td><td>Doutorado</td><td>Computação 2</td><td>DE</td></tr>
+        </table>
+      </div>
+    </div>
+  </main>
+
+</body>
+</html>
